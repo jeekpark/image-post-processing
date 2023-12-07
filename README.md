@@ -1,6 +1,7 @@
 # 🖥️ image-post-processing
 HDR, Histogram, Sharpen, Gamma correction, Bloom, Blur, Contour detection
 #### **Problem what I'm trying to solve:**
+- ```Image Filtering```
 - Gray scale algorithms.
 - Blur algorithms.
 - Sharpen algorithms.
