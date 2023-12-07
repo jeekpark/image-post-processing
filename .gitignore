@@ -2,7 +2,7 @@
 *.o
 obj
 a.out
-ipp
+imagepp
 lib/sfml/2.6.1
 .clangd
 .vscode

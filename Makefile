@@ -1,4 +1,4 @@
-TARGET				=	ipp
+TARGET				=	imagepp
 
 CXX						= c++
 CXXFLAGS			=	-I./lib/sfml/2.6.1/include -I./src -std=c++11
@@ -17,7 +17,8 @@ OBJ_DIR				=	./obj
 
 CLANGD_GEN		=	./clangd_gen.sh
 
-SRC_FILES			=	$(SRC_DIR)/main.cpp
+SRC_FILES			=	$(SRC_DIR)/main.cpp							\
+								$(CORE_DIR)/Core.cpp
 
 OBJ_FILES			=	$(SRC_FILES:$(SRC_DIR)/%.cpp=$(OBJ_DIR)/%.o)
 
@@ -41,7 +42,7 @@ $(PCH) : $(PCH_SRC)
 
 
 
-$(OBJ_DIR)/%.o : $(SRC_DIR)/%.cpp
+$(OBJ_DIR)/%.o : $(SRC_DIR)/%.cpp $(PCH)
 	mkdir -p $(dir $@)
 	$(CXX) $(CXXFLAGS) -include-pch $(PCH) -c $< -o $@
 
