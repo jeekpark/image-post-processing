@@ -47,10 +47,15 @@ namespace Ipp
 			for (unsigned int x = 0; x < mImageSize.x; ++x)
 			{
 				sf::Color pixel = mImage.getPixel(x, y);
-				sf::Uint8 gray = static_cast<sf::Uint8>(0.299f * pixel.r + 0.587f * pixel.g + 0.114f * pixel.b);
+				//sf::Uint8 gray = static_cast<sf::Uint8>(0.299f * pixel.r + 0.587f * pixel.g + 0.114f * pixel.b);
+				//sf::Uint8 gray = (pixel.r + pixel.g + pixel.b) / 3;
+				//sf::Uint8 gray = pixel.r;
+				sf::Uint8 gray = (std::max(pixel.r, std::max(pixel.g, pixel.b)) + std::min(pixel.r, std::min(pixel.g, pixel.b))) / 2;
+				
 				mImage.setPixel(x, y, sf::Color(gray, gray, gray));
 			}
 		}
+		mImage.saveToFile("./gray_desaturation_method.jpg");
 		sf::Texture t;
 		t.loadFromImage(mImage);
 		sf::Sprite s;
