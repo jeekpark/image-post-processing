@@ -1,4 +1,4 @@
-Target				=	ipp
+TARGET				=	ipp
 
 CXX						= c++
 CXXFLAGS			=	-I./lib/sfml/2.6.1/include -I./src -std=c++11
@@ -34,13 +34,15 @@ all : $(TARGET)
 $(TARGET) : $(OBJ_FILES)
 	$(CXX) $(LDFLAGS) $(LDLIBS) $^ -o $@
 
-
+pch : $(PCH)
 $(PCH) : $(PCH_SRC)
 	$(CXX) $(CXXFLAGS) -x c++-header -o $@ $<
 
+
+
 $(OBJ_DIR)/%.o : $(SRC_DIR)/%.cpp
 	mkdir -p $(dir $@)
-	$(CXX) $(CXXFLAGS) -include $(PCH) -c $< -o $@
+	$(CXX) $(CXXFLAGS) -include-pch $(PCH) -c $< -o $@
 
 clean :
 	rm -rf $(OBJ_DIR) $(TARGET) $(PCH)

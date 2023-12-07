@@ -1,0 +1,11 @@
+# Default
+*.o
+obj
+a.out
+ipp
+lib/sfml/2.6.1
+.clangd
+.vscode
+.DS*
+
+# Log
