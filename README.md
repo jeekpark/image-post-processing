@@ -1,15 +1,15 @@
 # 🖥️ image-post-processing
 HDR, Histogram, Sharpen, Gamma correction, Bloom, Blur, Contour detection
 #### **Problem what I'm trying to solve:**
-> - Gray scale algorithms.
-> - Blur algorithms.
-> - Sharpen algorithms.
-> - Bloom
-> - Contour detection
-> - Gamma correction (RAW to sRGB)
-> - HDR(Dynamic Range Compression)
-> - Noise Reduction
-> - Histogram viewer, Interactive tools
+- Gray scale algorithms.
+- Blur algorithms.
+- Sharpen algorithms.
+- Bloom
+- Contour detection
+- Gamma correction (RAW to sRGB)
+- HDR(Dynamic Range Compression)
+- Noise Reduction
+- Histogram viewer, Interactive tools
 
 ## Install:
 `image-post-processing` has an automatic installer.
