@@ -1,38 +1,15 @@
 # 🖥️ image-post-processing
 HDR, Histogram, Sharpen, Gamma correction, Bloom, Blur, Contour detection
-
-
-
-
-## Features:
-
-### Black & white convert
-
-#### Average method
-> Calculates the average of the Red, Green, and Blue (RGB) values of each pixel.<br>
-
-
-#### Weighted or luminosity method
-> Human eyes are more sensitive to green. So diffrent weights are appilied to the RGB values.<br>
-```(0.299 * red) + (0.587 * green) + (0.114 * blue)```<br>
-
-
-#### Desaturation method
-> This method takes the average of the maximum and minimum values among the RGB components of each pixel.<br>
-
-
-#### Single color channel
-> This method simply uses one color channel (such as Red or Green) for the black and white conversion.<br>
-
-
-#### Compare
-> Luminosity method is the best.<br>
-> <img src="./example/gray/gray_compare.gif" width="400">
-
-### 🏎️ Blur
-#### Box
-#### Gaussian
-
+#### **Problem what I'm trying to solve:**
+> - Gray scale algorithms.
+> - Blur algorithms.
+> - Sharpen algorithms.
+> - Bloom
+> - Contour detection
+> - Gamma correction (RAW to sRGB)
+> - HDR(Dynamic Range Compression)
+> - Noise Reduction
+> - Histogram viewer, Interactive tools
 
 ## Install:
 `image-post-processing` has an automatic installer.
@@ -49,5 +26,28 @@ Run the command below.
 cd ./image-post-processing
 ```
 ```
-./ipp
+./imagepp <file.jpg>
 ```
+
+## Features:
+
+> ### Black & white convert
+> #### Average method
+> Calculates the average of the Red, Green, and Blue (RGB) values of each pixel.<br>
+> #### Weighted or luminosity method
+> Human eyes are more sensitive to green. So diffrent weights are appilied to the RGB values.<br>
+```(0.299 * red) + (0.587 * green) + (0.114 * blue)```<br>
+> #### Desaturation method
+> This method takes the average of the maximum and minimum values among the RGB components of each pixel.<br>
+> #### Single color channel
+> This method simply uses one color channel (such as Red or Green) for the black and white conversion.<br>
+> #### Comparison of Four Types
+> Luminosity method is the best.<br>
+> <img src="./example/gray/gray_compare.gif" width="400">
+
+### 🏎️ Blur
+#### Box
+#### Gaussian
+
+
+
