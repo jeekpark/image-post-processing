@@ -35,6 +35,7 @@ $(TARGET) : $(OBJ_FILES)
 	$(CXX) $(LDFLAGS) $(LDLIBS) $^ -o $@
 
 pch : $(PCH)
+
 $(PCH) : $(PCH_SRC)
 	$(CXX) $(CXXFLAGS) -x c++-header -o $@ $<
 
