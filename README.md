@@ -10,7 +10,7 @@ HDR, Histogram, Sharpen, Gamma correction, Bloom, Blur, Contour detection
 > Calculates the average of the Red, Green, and Blue (RGB) values of each pixel.
 #### Weighted or luminosity method
 > Human eyes are more sensitive to green. So diffrent weights are appilied to the RGB values.<br>
-  ```(0.3 * R) + (0.59 * G) + (0.11 * B)```
+  ```0.299f * pixel.r + 0.587f * pixel.g + 0.114f * pixel.b```
 #### Desaturation method
 > This method takes the average of the maximum and minimum values among the RGB components of each pixel.
 #### Single color channel
