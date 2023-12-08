@@ -10,8 +10,9 @@
  */
 #pragma once
 
-
 #include "ipp/common.hpp"
+
+#include "ipp/View/MainWindow.hpp"
 
 namespace Ipp
 {
@@ -20,14 +21,11 @@ namespace Ipp
 	public:
 		Core();
 		~Core();
-		bool initImage(const std::string& fileName);
+		bool loadOriginalImage(const std::string& fileName);
 		void run();
-
 	private:
-		std::string mWindowTitle;
-		sf::RenderWindow mWindow;
-		std::string mFilePath;		
-		sf::Image mImage;
-		sf::Vector2u mImageSize;
+		std::string mFilePath;
+		sf::Image mOriginalImage;
+		MainWindow mMainWindow;
 	};
 }

@@ -11,14 +11,19 @@ LDLIBS				=	-lsfml-window -lsfml-graphics -lsfml-audio -lsfml-system
 SRC_DIR				=	./src
 IPP_DIR				=	$(SRC_DIR)/ipp
 CORE_DIR			=	$(IPP_DIR)/Core
-
+FILTER_DIR		=	$(IPP_DIR)/Filter
+IMAGE_DIR			=	$(IPP_DIR)/Image
+VIEW_DIR			=	$(IPP_DIR)/View
 
 OBJ_DIR				=	./obj
 
 CLANGD_GEN		=	./clangd_gen.sh
 
-SRC_FILES			=	$(SRC_DIR)/main.cpp							\
-								$(CORE_DIR)/Core.cpp
+SRC_FILES			=	$(SRC_DIR)/main.cpp									\
+								$(CORE_DIR)/Core.cpp								\
+								$(FILTER_DIR)/GrayscaleFilter.cpp		\
+								$(IMAGE_DIR)/Image.cpp							\
+								$(VIEW_DIR)/MainWindow.cpp
 
 OBJ_FILES			=	$(SRC_FILES:$(SRC_DIR)/%.cpp=$(OBJ_DIR)/%.o)
 
