@@ -17,16 +17,21 @@ namespace Ipp
   class CheckBoxWidgetElement
   {
   public:
-    CheckBoxWidgetElement(const std::string& label, sf::Vector2f pos);
+    CheckBoxWidgetElement(const std::string& label,
+                          sf::Vector2f pos,
+                          int index,
+                          bool state = false);
     ~CheckBoxWidgetElement();
-
-    void setPosition(sf::Vector2f pos);
-    void setLabel(const std::string& label);
+    CheckBoxWidgetElement(const CheckBoxWidgetElement& copy);
     void setState(bool state);
-  
+
+    int getIndex() const;
+    bool getState() const;
+
     bool isContains(sf::Vector2f pos);
     void update();
     void drawTo(sf::RenderWindow& window);
+    
 
   private:
     std::string mLabelString;
@@ -34,6 +39,8 @@ namespace Ipp
     sf::Font mFont;
     sf::RectangleShape mCheckBoxButton;
     sf::Text mLabelText;
+
     bool bState;
+    int mIndex;
   };
 }

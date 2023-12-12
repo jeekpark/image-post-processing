@@ -7,5 +7,5 @@ lib/sfml/2.6.1
 .clangd
 .vscode
 .DS*
-
+*.gch
 # Log

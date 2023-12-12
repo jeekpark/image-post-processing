@@ -15,7 +15,7 @@
 
 #include "ipp/Image/Image.hpp"
 #include "ipp/Filter/GrayscaleFilter.hpp"
-
+#include "ipp/View/Widget.hpp"
 namespace Ipp
 {
   class MainWindow

@@ -9,6 +9,9 @@
  * 
  */
 
+
+#include "SFML/Graphics/RenderWindow.hpp"
+#include "SFML/System/Vector2.hpp"
 #include "ipp/common.hpp"
 
 #include "ipp/View/CheckBoxWidgetElement.hpp"
@@ -18,13 +21,18 @@ namespace Ipp
   class Widget
   {
   public:
-    Widget(const std::string& widgetName);
-
-    void setWidgetName(const std::string& widgetName);
-    void addCheckBox(const std::string& label);
+    Widget(const std::string& widgetName, sf::Vector2f pos);
     
-    sf::Vector2f getWidgetBoxSize() const;
+    void addCheckBox(const std::string& label);
 
+    bool isContains(sf::Vector2f pos);
+    void update(sf::Vector2f pos);
+    void drawTo(sf::RenderWindow& window);
+    
+    int getActiveCheckBoxIndex() const;
+    
+  private:
+    void fillCheckBox(bool state);
   private:
     std::string mWidgetNameString;
     sf::Font mFont;
@@ -32,9 +40,5 @@ namespace Ipp
     sf::RectangleShape mWidgetBox;
     
     std::vector<CheckBoxWidgetElement> mCheckBoxs;
-
-
-    
-
   };
 }

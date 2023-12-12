@@ -19,11 +19,13 @@ OBJ_DIR				=	./obj
 
 CLANGD_GEN		=	./clangd_gen.sh
 
-SRC_FILES			=	$(SRC_DIR)/main.cpp									\
-								$(CORE_DIR)/Core.cpp								\
-								$(FILTER_DIR)/GrayscaleFilter.cpp		\
-								$(IMAGE_DIR)/Image.cpp							\
-								$(VIEW_DIR)/MainWindow.cpp
+SRC_FILES			=	$(SRC_DIR)/main.cpp											\
+								$(CORE_DIR)/Core.cpp										\
+								$(FILTER_DIR)/GrayscaleFilter.cpp				\
+								$(IMAGE_DIR)/Image.cpp									\
+								$(VIEW_DIR)/MainWindow.cpp							\
+								$(VIEW_DIR)/Widget.cpp									\
+								$(VIEW_DIR)/CheckBoxWidgetElement.cpp		
 
 OBJ_FILES			=	$(SRC_FILES:$(SRC_DIR)/%.cpp=$(OBJ_DIR)/%.o)
 

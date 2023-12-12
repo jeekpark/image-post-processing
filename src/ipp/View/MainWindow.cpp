@@ -10,6 +10,9 @@
  */
 
 #include "ipp/View/MainWindow.hpp"
+#include "SFML/Graphics/RectangleShape.hpp"
+#include "SFML/System/Vector2.hpp"
+#include "ipp/common.hpp"
 
 namespace Ipp
 {
@@ -20,8 +23,7 @@ namespace Ipp
     mWindowTitle = "image-post-processing ";
     mWindowTitle.append(IPP_VERSION);
     mWindow.create(sf::VideoMode(WINDOW_X, WINDOW_Y), mWindowTitle);
-
-
+    mWindow.setFramerateLimit(60);
     mGrayscaleFilter.setMethod(GrayscaleFilter::Luminosity);
     
 
@@ -124,6 +126,11 @@ namespace Ipp
 
   void MainWindow::loop()
   {
+    Widget widget("test", sf::Vector2f(0, 400));
+    widget.addCheckBox("hello");
+    widget.addCheckBox("bye");
+    widget.addCheckBox("good");
+
     while (mWindow.isOpen())
     {
       sf::Event event;
@@ -137,6 +144,11 @@ namespace Ipp
           {
             sf::Vector2i mousePos = sf::Mouse::getPosition(mWindow);
             sf::Vector2f mousePosF(static_cast<float>(mousePos.x), static_cast<float>(mousePos.y));
+            if (widget.isContains(mousePosF))
+            {
+              widget.update(mousePosF);
+              
+            }
             if (mGrayAverageButton.getGlobalBounds().contains(mousePosF))
             {
               if (eGrayscaleMethod == Average)
@@ -241,6 +253,7 @@ namespace Ipp
       mWindow.draw(mGrayDesaturationText);
       mWindow.draw(mGraySingleChannelButton);
       mWindow.draw(mGraySingleChannelText);
+      widget.drawTo(mWindow);
       mWindow.display();
     }
   }

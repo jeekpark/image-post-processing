@@ -11,11 +11,16 @@
 
 #include "ipp/View/CheckBoxWidgetElement.hpp"
 
+#include "ipp/common.hpp"
+
 namespace Ipp
 {
-  CheckBoxWidgetElement::CheckBoxWidgetElement(const std::string& label, sf::Vector2f pos)
+  CheckBoxWidgetElement::CheckBoxWidgetElement(const std::string& label,
+                                               sf::Vector2f pos,
+                                               int index,
+                                               bool state)
   {
-    mLabelString = label;
+    
 
     mFont.loadFromFile(ARIAL_FONT_PATH);
     mFont.setSmooth(true);
@@ -24,34 +29,49 @@ namespace Ipp
     mCheckBoxButton.setFillColor(BLACK_COLOR);
     mCheckBoxButton.setOutlineColor(WHITE_COLOR);
     mCheckBoxButton.setOutlineThickness(1.f);
-    mCheckBoxButton.setPosition(sf::Vector2f(pos.x + 20, pos.y));
+    mCheckBoxButton.setPosition(sf::Vector2f(pos.x, pos.y));
 
+    mLabelString = label;
+    mLabelText.setString(mLabelString);
     mLabelText.setFont(mFont);
     mLabelText.setCharacterSize(15);
     mLabelText.setFillColor(WHITE_COLOR);
-    mLabelText.setPosition(pos);
-    mLabelText.setScale(0.76f, 1.f);
-    mLabelText.setString(mLabelString);
+    mLabelText.setPosition(sf::Vector2f(pos.x + 80, pos.y));
+
+
+    mIndex = index;
+    bState = state;
   }
 
   CheckBoxWidgetElement::~CheckBoxWidgetElement()
   {}
 
-  void CheckBoxWidgetElement::setPosition(sf::Vector2f pos)
+  CheckBoxWidgetElement::CheckBoxWidgetElement(const CheckBoxWidgetElement& copy)
   {
-    mCheckBoxButton.setPosition(sf::Vector2f(pos.x + 20, pos.y));
-    mLabelText.setPosition(pos);
+    mLabelString = copy.mLabelString;
+    mFont = copy.mFont;
+    mLabelText = copy.mLabelText;
+    mLabelText.setString(mLabelString);
+    mLabelText.setFont(mFont);
+    bState = copy.bState;
+    mIndex = copy.mIndex;
+    mCheckBoxButton = copy.mCheckBoxButton;
   }
 
-  void CheckBoxWidgetElement::setLabel(const std::string &label)
-  {
-    mLabelString = label;
-    mLabelText.setString(mLabelString);
-  }
 
   void CheckBoxWidgetElement::setState(bool state)
   {
     bState = state;
+  }
+
+  int CheckBoxWidgetElement::getIndex() const
+  {
+    return mIndex;
+  }
+
+  bool CheckBoxWidgetElement::getState() const
+  {
+    return bState;
   }
 
   bool CheckBoxWidgetElement::isContains(sf::Vector2f pos)
@@ -69,6 +89,7 @@ namespace Ipp
   {
     window.draw(mLabelText);
     window.draw(mCheckBoxButton);
+    //std::cout << mLabelText.getFont() << " " << mIndex << std::endl;
   }
 
 
