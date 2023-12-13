@@ -8,17 +8,18 @@
 #include <sstream>
 #include <random>
 #include <iomanip>
+#include <list>
 
 #include <SFML/System.hpp>
 #include <SFML/Window.hpp>
 #include <SFML/Graphics.hpp>
 #include <SFML/Audio.hpp>
 
-
+#define interface         struct
 #define IPP_VERSION				"0.0.1a"
 
 #define TIMES_FONT_PATH   "resource/Times New Roman/times new roman bold.ttf"
-#define ARIAL_FONT_PATH   "resource/arial-cufonfonts/ARIALBD.TTF"
+#define ARIAL_FONT_PATH   "resource/arial-cufonfonts/ARIAL.TTF"
 #define LIGHT_FONT_PATH   "./resource/louis_george_cafe/Louis George Cafe Light.ttf"
 
 #define ORANGE_COLOR      (sf::Color(255, 114, 53))

@@ -24,8 +24,8 @@ SRC_FILES			=	$(SRC_DIR)/main.cpp											\
 								$(FILTER_DIR)/GrayscaleFilter.cpp				\
 								$(IMAGE_DIR)/Image.cpp									\
 								$(VIEW_DIR)/MainWindow.cpp							\
-								$(VIEW_DIR)/Widget.cpp									\
-								$(VIEW_DIR)/CheckBoxWidgetElement.cpp		
+								$(VIEW_DIR)/Widgets/Elements/CheckBoxWidgetElement.cpp\
+								$(VIEW_DIR)/Widgets/RadioButtonWidget.cpp
 
 OBJ_FILES			=	$(SRC_FILES:$(SRC_DIR)/%.cpp=$(OBJ_DIR)/%.o)
 

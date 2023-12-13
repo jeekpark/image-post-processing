@@ -9,9 +9,7 @@
  * 
  */
 
-#include "ipp/View/CheckBoxWidgetElement.hpp"
-
-#include "ipp/common.hpp"
+#include "ipp/View/Widgets/Elements/CheckBoxWidgetElement.hpp"
 
 namespace Ipp
 {
@@ -29,16 +27,15 @@ namespace Ipp
     mCheckBoxButton.setFillColor(BLACK_COLOR);
     mCheckBoxButton.setOutlineColor(WHITE_COLOR);
     mCheckBoxButton.setOutlineThickness(1.f);
-    mCheckBoxButton.setPosition(sf::Vector2f(pos.x, pos.y));
+    mCheckBoxButton.setPosition(pos);
 
     mLabelString = label;
-    mLabelText.setString(mLabelString);
     mLabelText.setFont(mFont);
     mLabelText.setCharacterSize(15);
     mLabelText.setFillColor(WHITE_COLOR);
-    mLabelText.setPosition(sf::Vector2f(pos.x + 80, pos.y));
-
-
+    mLabelText.setPosition(sf::Vector2f(pos.x + 20, pos.y - 2));
+    mLabelText.setScale(1.f, 1.f);
+    mLabelText.setString(mLabelString);
     mIndex = index;
     bState = state;
   }
@@ -89,8 +86,5 @@ namespace Ipp
   {
     window.draw(mLabelText);
     window.draw(mCheckBoxButton);
-    //std::cout << mLabelText.getFont() << " " << mIndex << std::endl;
   }
-
-
 }

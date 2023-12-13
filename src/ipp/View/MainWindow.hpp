@@ -15,12 +15,15 @@
 
 #include "ipp/Image/Image.hpp"
 #include "ipp/Filter/GrayscaleFilter.hpp"
-#include "ipp/View/Widget.hpp"
+
+#include "ipp/View/Widgets/RadioButtonWidget.hpp"
+
 namespace Ipp
 {
   class MainWindow
   {
   public:
+    MainWindow();
     void setup(const sf::Image& originalImage);
     void loop();
   private:
@@ -52,27 +55,8 @@ namespace Ipp
      * 
      */
     GrayscaleFilter mGrayscaleFilter;
-
-    /**
-     * @brief About UI.
-     * 
-     */
-    sf::Font mH1Font;
-    sf::Font mH2Font;
-    sf::Font mH3Font;
-
-    sf::RectangleShape mGrayscaleWidgetBox;
-    sf::Text mGrayscaleWidgetText;
-    sf::RectangleShape mGrayAverageButton;
-    sf::Text mGrayAverageText;
-    sf::RectangleShape mGrayLuminosityButton;
-    sf::Text mGrayLuminosityText;
-    sf::RectangleShape mGrayDesaturationButton;
-    sf::Text mGrayDesaturationText;
-    sf::RectangleShape mGraySingleChannelButton;
-    sf::Text mGraySingleChannelText;
     GrayscaleMethod eGrayscaleMethod;
-    
+
 
     
   
