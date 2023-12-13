@@ -35,10 +35,8 @@ namespace Ipp
 
   void MainWindow::loop()
   {
+    GrayscaleFilterWidget test(sf::Vector2f(0, 0));
 
-    RadioButtonWidget test("HELLO", sf::Vector2f(0, 0));
-    test.addElement("GOOD");
-    test.addElement("const std::string &elementName");
     while (mWindow.isOpen())
     {
       sf::Event event;

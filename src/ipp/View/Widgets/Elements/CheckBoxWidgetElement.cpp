@@ -33,7 +33,7 @@ namespace Ipp
     mLabelText.setFont(mFont);
     mLabelText.setCharacterSize(15);
     mLabelText.setFillColor(WHITE_COLOR);
-    mLabelText.setPosition(sf::Vector2f(pos.x + 20, pos.y - 2));
+    mLabelText.setPosition(sf::Vector2f(pos.x + 20, pos.y - 2.5));
     mLabelText.setScale(1.f, 1.f);
     mLabelText.setString(mLabelString);
     mIndex = index;

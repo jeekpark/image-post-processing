@@ -18,7 +18,7 @@ namespace Ipp
 
   const float RadioButtonWidget::scWidgetBoxMarginTop = 3.f;
   const float RadioButtonWidget::scWidgetBoxMarginLeft = 12.f;
-  const float RadioButtonWidget::scWidgetBoxMarginBot = 3.f;
+  const float RadioButtonWidget::scWidgetBoxMarginBot = 8.f;
 
   const float RadioButtonWidget::scWidgetBoxOutlineThickness = 2.f;
   const sf::Vector2f RadioButtonWidget::scWidgetBoxSize = sf::Vector2f(360.f, 37.f);

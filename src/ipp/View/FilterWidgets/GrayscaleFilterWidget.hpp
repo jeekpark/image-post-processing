@@ -17,6 +17,9 @@ namespace Ipp
 {
   class GrayscaleFilterWidget : public RadioButtonWidget
   {
-
+  public:
+    GrayscaleFilterWidget(sf::Vector2f pos);
+  private:
+    static const int scPriority;    
   };
 }
