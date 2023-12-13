@@ -23,5 +23,57 @@ namespace Ipp
     addElement("Luminosity method *suitable for human eyes");
     addElement("Desaturation method");
     addElement("Single color channel method(red)");
+
+    mPreviousActiveElementIndex = -1;
+    bIsChanged = false;
+    mGrayscaleFilter.setMethod(GrayscaleFilter::Average);
   }
+
+  void GrayscaleFilterWidget::update(sf::Vector2f pos)
+  {
+    RadioButtonWidget::update(pos);
+    std::cout << "asd" << std::endl;
+    if (mPreviousActiveElementIndex == RadioButtonWidget::getActiveElementIndex())
+    {
+      bIsChanged = false;
+    }
+    else
+    {
+      bIsChanged = true;
+      mPreviousActiveElementIndex = RadioButtonWidget::getActiveElementIndex();
+      switch (RadioButtonWidget::getActiveElementIndex())
+      {
+      case 0:
+        mGrayscaleFilter.setMethod(GrayscaleFilter::Average);
+        break;
+      case 1:
+        mGrayscaleFilter.setMethod(GrayscaleFilter::Luminosity);
+        break;
+      case 2:
+        mGrayscaleFilter.setMethod(GrayscaleFilter::Desaturation);
+        break;
+      case 3:
+        mGrayscaleFilter.setMethod(GrayscaleFilter::SingleChannel);
+        break;
+      default:
+        break;
+      }
+    }
+  }
+
+  bool GrayscaleFilterWidget::isChanged() const
+  {
+    return bIsChanged;
+  }
+
+  IFilter* GrayscaleFilterWidget::getFilterPtr()
+  {
+    return &mGrayscaleFilter;
+  }
+
+  int GrayscaleFilterWidget::getPriorty() const
+  {
+    return scPriority;
+  }
+
 }

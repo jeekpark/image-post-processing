@@ -12,6 +12,8 @@
 #include "ipp/common.hpp"
 
 #include "ipp/View/Widgets/RadioButtonWidget.hpp"
+#include "ipp/Filter/GrayscaleFilter.hpp"
+#include "ipp/View/FilterWidgets/IFilterWidget.hpp"
 
 namespace Ipp
 {
@@ -19,7 +21,20 @@ namespace Ipp
   {
   public:
     GrayscaleFilterWidget(sf::Vector2f pos);
+
+  public: // RadioButtonWidget methods
+    virtual void update(sf::Vector2f pos);
+
+  public: // IFilterWidget methods
+    virtual bool isChanged() const;
+    virtual IFilter* getFilterPtr();
+    virtual int getPriorty() const;
+    
   private:
-    static const int scPriority;    
+    int mPreviousActiveElementIndex;
+    bool bIsChanged;
+    GrayscaleFilter mGrayscaleFilter;
+  private: // static variables
+    static const int scPriority;
   };
 }

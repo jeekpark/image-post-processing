@@ -55,7 +55,13 @@ namespace Ipp
             if (test.isContains(mousePosF))
             {
               test.update(mousePosF);
-              
+              if (test.isChanged())
+              {
+                IFilter* ptr = test.getFilterPtr();
+                mPreviewImage = mOriginalImage;
+                if (test.getActiveElementIndex() != -1)
+                  ptr->applyTo(mPreviewImage);
+              }
             }
           }
         }
