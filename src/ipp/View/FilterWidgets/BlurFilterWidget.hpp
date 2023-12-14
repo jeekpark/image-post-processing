@@ -1,5 +1,5 @@
 /**
- * @file GrayscaleWidget.hpp
+ * @file BlurFilterWidget.hpp
  * @author Jeekun Park (jeekunp@naver.com)
  * @brief 
  * @version 0.1

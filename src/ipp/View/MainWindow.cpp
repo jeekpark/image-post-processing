@@ -11,6 +11,7 @@
 
 #include "ipp/View/MainWindow.hpp"
 
+#include "ipp/Filter/BlurFilter.hpp"
 #include "ipp/common.hpp"
 
 namespace Ipp
@@ -66,6 +67,11 @@ namespace Ipp
           }
         }
       }
+      BlurFilter blur;
+      blur.setMethod(BlurFilter::Gaussian);
+      static int i = 0;
+      if (i == 0){
+      blur.applyTo(mPreviewImage);++i;}
       sf::Texture t;
       t.loadFromImage(mPreviewImage);
       sf::Sprite s;

@@ -8,7 +8,7 @@
  * @copyright Copyright (c) 2023
  * 
  */
-
+#pragma once
 #include "ipp/common.hpp"
 
 #define interface struct

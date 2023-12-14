@@ -8,12 +8,14 @@
  * @copyright Copyright (c) 2023
  * 
  */
+#pragma once
 
 #include "ipp/common.hpp"
-#include "ipp/Filter/IFilter.hpp"
+
 
 namespace Ipp
 {
+  interface IFilter;
   interface IFilterWidget
   {
     virtual bool isChanged() = 0;

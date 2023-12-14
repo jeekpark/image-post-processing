@@ -15,8 +15,10 @@
 
 #include "ipp/Image/Image.hpp"
 #include "ipp/Filter/GrayscaleFilter.hpp"
+#include "ipp/Filter/BlurFilter.hpp"
 
 #include "ipp/View/FilterWidgets/GrayscaleFilterWidget.hpp"
+
 
 namespace Ipp
 {
